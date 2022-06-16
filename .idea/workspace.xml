@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08c18782-2f23-4707-a4e6-5527dba82026" name="Changes" comment="Started writing code">
+    <list default="true" id="08c18782-2f23-4707-a4e6-5527dba82026" name="Changes" comment="Program and tests written">
+      <change afterPath="$PROJECT_DIR$/src/test/hangManTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_5.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/hangMan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/hangMan.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,16 +31,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="Application.hangMan">
     <configuration name="hangMan" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hangMan" />
       <module name="Project_5" />
@@ -46,9 +52,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="hangManTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project_5" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="hangManTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="hangManTest.getInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project_5" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="hangManTest" />
+      <option name="METHOD_NAME" value="getInput" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="hangManTest.setInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project_5" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="hangManTest" />
+      <option name="METHOD_NAME" value="setInput" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.hangMan" />
+        <item itemvalue="JUnit.hangManTest" />
+        <item itemvalue="JUnit.hangManTest.getInput" />
+        <item itemvalue="JUnit.hangManTest.setInput" />
       </list>
     </recent_temporary>
   </component>
@@ -68,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655148398734</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Basic program written">
+      <created>1655324737194</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1655324737194</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -84,6 +129,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Started writing code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started writing code" />
+    <MESSAGE value="Basic program written" />
+    <MESSAGE value="Program and tests written" />
+    <option name="LAST_COMMIT_MESSAGE" value="Program and tests written" />
   </component>
 </project>

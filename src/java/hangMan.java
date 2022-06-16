@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class hangMan {
@@ -6,21 +7,21 @@ public class hangMan {
     static String[] words = {"Joel", "Vectrex", "Luke", "Iron", "Rhododendron", "Stearman", "Eagle", "Taco", "Pizza", "Capacitor", "Blaze", "Scion", "Galaga", "Boeing", "Konami"};
     static String[] wrong = {"\n+----------+ \n" + "           | \n" + "           | \n" + "           | \n" + "            === \n", "\n+----------+ \n" + " O         | \n" + "           | \n" + "           | \n" + "            === \n", "\n+----------+ \n" + " O         | \n" + " |         | \n" + "           | \n" + "            === \n", "\n+----------+ \n" + " O         | \n" + " |         | \n" + " |         | \n" + "            === \n", "\n+----------+ \n" + " O         | \n" + " |         | \n" + " |         | \n" + "/           === \n", "\n+----------+ \n" + " O         | \n" + " |         | \n" + " |         | \n" + "/ \\         === \n", "\n+----------+ \n" + " O         | \n" + "/|         | \n" + " |         | \n" + "/ \\         === \n", "\n+----------+ \n" + " O         | \n" + "/|\\        | \n" + " |         | \n" + "/ \\         === \n"};
     static String[] word;
-    static String userInput = "";
-    static String wordPick = "";
-
-    static String missedLetters = "";
-    static int wordLen;
-    static int wordUse = 0;
-    static int numWrong;
-    static boolean done = false;
-    static boolean complete = false;
+    static String userInput = "", wordPick = "", missedLetters = "", letUsed;
+    static int wordLen, wordUse = 0, numWrong;
+    static boolean done = false, complete = false;
 
 
-    static void setInput()
+    static void setInput(String input)
     {
-        System.out.println("\n Guess a letter: ");
-        userInput = scan.nextLine();
+        try {
+            userInput = input;
+        }
+        catch (Exception e)
+        {
+            System.out.println("Oops, something went wrong. Exiting the game . . .");
+            System.exit(-1);
+        }
     }
 
     static String getInput()
@@ -93,6 +94,7 @@ public class hangMan {
         wordPick = words[wordUse];
         word = new String[wordLen];
         missedLetters = "Missed letters: ";
+        letUsed = "";
         done = false;
         complete = false;
         System.out.println("\nH A N G M A N \n");
@@ -109,10 +111,26 @@ public class hangMan {
         }
         while(numWrong != 7)
         {
-
             if (!complete)
             {
-                setInput();
+                boolean validAnswer = false;
+                while (!validAnswer)
+                {
+                    System.out.println("\n Guess a letter: ");
+                    userInput = scan.nextLine();
+                    int letIndex = letUsed.indexOf(userInput);
+                    if (letIndex != -1)
+                    {
+                        System.out.println("Sorry, that letter is already used.\n");
+                    }
+                    else
+                    {
+                        letUsed = letUsed + userInput;
+                        setInput(userInput);
+                        validAnswer = true;
+                    }
+                }
+
                 String guess = getInput();
                 computeOutcome(guess);
             }
@@ -120,8 +138,6 @@ public class hangMan {
             {
                 break;
             }
-
-
         }
     }
 
@@ -130,7 +146,6 @@ public class hangMan {
         while(!done)
         {
             playGame();
-
             if (complete)
             {
                 System.out.println("\n\nCongratulations, you guessed my word!");
@@ -152,12 +167,16 @@ public class hangMan {
                         System.out.println("Good-bye for now.");
                         done = true;
                         break;
+                    default:
+                        System.out.println("Sorry, I didn't understand that. Exiting by default . . .");
+                        done = true;
+                        break;
                 }
             }
             else if (numWrong == 7)
             {
                 System.out.println("\n\nSorry, you ran out of guesses.");
-                System.out.println("The word was: " + wordPick + ".");
+                System.out.println("The word was: " + words[wordUse] + ".");
                 System.out.println("Do you want to play again (y/n): ");
                 userInput = scan.nextLine();
                 switch (userInput)
@@ -176,9 +195,12 @@ public class hangMan {
                         System.out.println("Good-bye for now.");
                         done = true;
                         break;
+                    default:
+                        System.out.println("Sorry, I didn't understand that. Exiting by default . . .");
+                        done = true;
+                        break;
                 }
             }
         }
-
     }
 }
